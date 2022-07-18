@@ -1,5 +1,6 @@
 {
   "name": "rizkypm-portofolio",
+  "homepage": "https://rizky-pm.github.io/portofolio/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
