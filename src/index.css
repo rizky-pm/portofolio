@@ -1,13 +1,180 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+    @keyframes slideAnim {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+    }
+
+    @keyframes appearError {
+        from {
+          transform: scaleY(0);
+        }
+        to {
+          transform: scaleY(1);
+        }
+    }
+
+    @keyframes disappearError {
+        from {
+          transform: scaleY(1);
+        }
+        to {
+          transform: scaleY(0);
+        }
+    }
+
+    @keyframes hoverAnimation {
+        0% {
+            width: 0;
+        }
+
+        100% {
+            @apply w-full
+        }
+    }
+
+    @keyframes reverseHoverAnimation {
+        0% {
+            @apply w-full
+        }
+
+        100% {
+            width: 0;
+        }
+    }
+
+    @keyframes testAnimation {
+      0% {
+        width: 0;
+      }
+
+      100% {
+          @apply w-full
+      }
+    }
+
+      .basic-transition {
+        @apply transition-all ease-linear duration-[0.25s];
+      }
+      
+      .looper {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .looper__innerList {
+        display: flex;
+        justify-content: center;
+        width: fit-content;
+      }
+      
+      .looper__innerList[data-animate="true"] .looper__listInstance {
+        animation: slideAnim linear infinite;   
+      }
+      
+      .looper__listInstance {
+        display: flex;
+        width: max-content;
+      
+        animation: none;
+      }
+
+      .primary-button-dark {
+        @apply py-2 px-6 lg:px-8 bg-dark text-light font-body font-medium lg:font-bold tracking-wider text-base lg:text-lg border-2 lg:border-4 border-dark hover:bg-transparent hover:text-dark basic-transition uppercase
+      }
+
+      .primary-button-light {
+        @apply py-2 px-6 lg:px-8 bg-light text-dark font-body font-medium lg:font-bold tracking-wider text-base lg:text-lg border-2 lg:border-4 border-light hover:bg-transparent hover:text-light basic-transition uppercase
+      }
+
+      .input-field {
+        @apply p-2 rounded-sm mb-1 outline-none bg-transparent border-b-2 focus:outline-none border-dark shadow-sm placeholder-lightGray focus:placeholder-dark
+      }
+
+
+      .appear-error-message {
+        animation: appearError linear 0.3s;
+        transform-origin: top;
+      }
+
+      .disappear-error-message {
+        animation: disappearError linear 0.3s;
+        transform-origin: bottom;
+      }
+
+      .link {
+        text-decoration: none;
+        position: relative;
+      }
+
+      .link:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        animation: reverseHoverAnimation 0.25s ease;
+
+        @apply bg-lightBlue h-1
+      }
+
+      .link:hover:after  {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: hoverAnimation 0.25s ease;
+
+        @apply bg-lightBlue w-full h-1
+      }
+
+      .animate-on-render {
+        text-decoration: none;
+      }
+
+      .animate-on-render:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: testAnimation 2s ease;
+        
+        @apply w-full bg-lightBlue h-full
+      }
+
+      .hamburger-line {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        height: 2px;
+        width: 30px;
+        /* --tw-bg-opacity: 1; */
+        /* background-color: rgb(15 23 42 / var(--tw-bg-opacity)); */
+        background-color: white;
+      }
+      
+      .hamburger-active > span:nth-child(1) {
+        @apply origin-top-left rotate-45
+      }
+      
+      .hamburger-active > span:nth-child(2) {
+        @apply scale-0
+      }
+      
+      .hamburger-active > span:nth-child(3) {
+        @apply origin-bottom-left -rotate-45
+      }
 }
