@@ -31,7 +31,7 @@ const Projects = ({ innerRef }) => {
   };
 
   useEffect(() => {
-    // populateProjects();
+    populateProjects();
   }, []);
 
   return (
