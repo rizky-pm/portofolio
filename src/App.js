@@ -35,7 +35,7 @@ function App() {
         break;
 
       case 'experience':
-        window.scrollTo(0, experienceY - 65);
+        window.scrollTo(0, experienceY - 64);
         break;
 
       case 'skills':
@@ -78,7 +78,11 @@ function App() {
 
   return (
     <div className={`relative`}>
-      <div className='fixed bg-transparent w-full h-full z-20'>
+      <div
+        className={`fixed bg-transparent w-full h-full basic-transition z-20 ${
+          isMenuActive ? '' : '-translate-x-full'
+        }`}
+      >
         <div
           className={`w-full h-full bg-dark/90 basic-transition ${
             isMenuActive ? '' : '-translate-x-full'

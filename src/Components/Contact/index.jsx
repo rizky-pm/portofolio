@@ -39,10 +39,37 @@ const Contact = ({ innerRef }) => {
       </div>
 
       <div className='flex w-full justify-around 2xl:justify-center 2xl:space-x-20'>
-        <LinkedIn width='w-8 xs:w-10 md:w-16' height='h-8 xs:h-10 md:h-16' />
-        <Instagram width='w-8 xs:w-10 md:w-16' height='h-8 xs:h-10 md:h-16' />
-        <Github width='w-8 xs:w-10 md:w-16' height='h-8 xs:h-10 md:h-16' />
-        <Twitter width='w-8 xs:w-10 md:w-16' height='h-8 xs:h-10 md:h-16' />
+        <a
+          href='https://www.linkedin.com/in/rizky-p-mahendra'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <LinkedIn width='w-8 xs:w-10 md:w-16' height='h-8 xs:h-10 md:h-16' />
+        </a>
+
+        <a
+          href='https://www.instagram.com/_rizkypm/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <Instagram width='w-8 xs:w-10 md:w-16' height='h-8 xs:h-10 md:h-16' />
+        </a>
+
+        <a
+          href='https://github.com/rizky-pm'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <Github width='w-8 xs:w-10 md:w-16' height='h-8 xs:h-10 md:h-16' />
+        </a>
+
+        <a
+          href='https://twitter.com/_rizkypm'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <Twitter width='w-8 xs:w-10 md:w-16' height='h-8 xs:h-10 md:h-16' />
+        </a>
       </div>
       {/* </div>
       </div> */}
