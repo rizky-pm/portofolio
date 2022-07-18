@@ -1,14 +1,29 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import Code from '../Icons/Code';
 import Link from '../Icons/Link';
 
 const ProjectCard = ({ data }) => {
+  const { title, repository, liveSite, thumbnail, tag } = data;
+
   const [isHover, setIsHover] = useState(false);
 
-  const { title, repository, liveSite, thumbnail, tag } = data;
+  const [cardRef, cardInView] = useInView({
+    triggerOnce: false,
+    rootMargin: '-100px 0px',
+  });
+
   return (
-    <div
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, translateY: 100 }}
+      animate={{
+        opacity: cardInView ? 1 : 0,
+        translateY: cardInView ? 0 : 100,
+      }}
+      transition={{ duration: 1 }}
       onMouseEnter={() => {
         setIsHover(true);
       }}
@@ -85,7 +100,7 @@ const ProjectCard = ({ data }) => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

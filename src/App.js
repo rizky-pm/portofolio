@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import Navbar from './Components/Navbar';
+import Menu from './Components/Menu';
 import Header from './Components/Header';
 import Projects from './Components/Projects';
 import Experience from './Components/Experience';
@@ -9,11 +10,13 @@ import Contact from './Components/Contact';
 
 function App() {
   const [isMenuActive, setIsMenuActive] = useState(false);
-  const [projectY, setProjectY] = useState();
-  const [experienceY, setExperienceY] = useState();
-  const [skillsY, setSkillsY] = useState();
-  const [contactY, setContactY] = useState();
+  const [topY, setTopY] = useState(0);
+  const [projectY, setProjectY] = useState(0);
+  const [experienceY, setExperienceY] = useState(0);
+  const [skillsY, setSkillsY] = useState(0);
+  const [contactY, setContactY] = useState(0);
 
+  const topRef = useRef();
   const projectRef = useRef();
   const experienceRef = useRef();
   const skillsRef = useRef();
@@ -27,9 +30,11 @@ function App() {
     setIsMenuActive((prevState) => !prevState);
     getPosition();
 
-    console.log(reference);
-
     switch (reference) {
+      case 'top':
+        window.scrollTo(0, topY);
+        break;
+
       case 'projects':
         window.scrollTo(0, projectY - 65);
         break;
@@ -52,21 +57,18 @@ function App() {
   };
 
   const getPosition = () => {
-    const proY = projectRef.current.offsetTop;
-    const expY = experienceRef.current.offsetTop;
-    const sklY = skillsRef.current.offsetTop;
-    const conY = contactRef.current.offsetTop;
+    const topYCoordinate = topRef.current.offsetTop;
+    const proYCoordinate = projectRef.current.offsetTop;
+    const expYCoordinate = experienceRef.current.offsetTop;
+    const sklYCoordinate = skillsRef.current.offsetTop;
+    const conYCoordinate = contactRef.current.offsetTop;
 
-    setProjectY(proY);
-    setExperienceY(expY);
-    setSkillsY(sklY);
-    setContactY(conY);
+    setTopY(topYCoordinate);
+    setProjectY(proYCoordinate);
+    setExperienceY(expYCoordinate);
+    setSkillsY(sklYCoordinate);
+    setContactY(conYCoordinate);
   };
-
-  console.log({ projectY });
-  console.log({ experienceY });
-  console.log({ skillsY });
-  console.log({ contactY });
 
   useEffect(() => {
     getPosition();
@@ -78,64 +80,9 @@ function App() {
 
   return (
     <div className={`relative`}>
-      <div
-        className={`fixed bg-transparent w-full h-full basic-transition z-20 ${
-          isMenuActive ? '' : '-translate-x-full'
-        }`}
-      >
-        <div
-          className={`w-full h-full bg-dark/90 basic-transition ${
-            isMenuActive ? '' : '-translate-x-full'
-          }`}
-        >
-          <nav className='text-light py-16 p-2'>
-            <ul className='flex flex-col space-y-8'>
-              <li>
-                <button
-                  className='uppercase font-heading font-semibold underline text-4xl'
-                  onClick={() => {
-                    toggleNav('projects');
-                  }}
-                >
-                  Projects
-                </button>
-              </li>
-              <li>
-                <button
-                  className='uppercase font-heading font-semibold underline text-4xl'
-                  onClick={() => {
-                    toggleNav('experience');
-                  }}
-                >
-                  Experience
-                </button>
-              </li>
-              <li>
-                <button
-                  className='uppercase font-heading font-semibold underline text-4xl'
-                  onClick={() => {
-                    toggleNav('skills');
-                  }}
-                >
-                  Skills
-                </button>
-              </li>
-              <li>
-                <button
-                  className='uppercase font-heading font-semibold underline text-4xl'
-                  onClick={() => {
-                    toggleNav('contact');
-                  }}
-                >
-                  Contact
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <Navbar isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
-      <Header />
+      <Menu isMenuActive={isMenuActive} toggleNav={toggleNav} />
+      <Navbar isMenuActive={isMenuActive} toggleNav={toggleNav} />
+      <Header innerRef={topRef} />
       <Projects innerRef={projectRef} />
       <Experience innerRef={experienceRef} />
       <Skills innerRef={skillsRef} />

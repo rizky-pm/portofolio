@@ -4,7 +4,7 @@ const Twitter = ({ width, height }) => {
   return (
     <div className='link'>
       <svg
-        class={`${width} ${height} text-light hover:text-lightBlue hover:cursor-pointer transition`}
+        className={`${width} ${height} text-light hover:text-lightBlue hover:cursor-pointer transition`}
         width='24'
         height='24'
         viewBox='0 0 24 24'

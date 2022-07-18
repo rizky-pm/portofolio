@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import reactIcon from '../../Images/icon-bnw/react-js-bnw.png';
 import tailwindCssIcon from '../../Images/icon-bnw/tailwind-css-bnw.png';
@@ -16,6 +18,16 @@ import postmanIcon from '../../Images/icon-bnw/postman-bnw.png';
 import InfiniteLooper from '../InfiniteLooper/index';
 
 const Skills = ({ innerRef }) => {
+  const [titleRef, titleInView] = useInView({
+    triggerOnce: false,
+    rootMargin: '-100px 0px',
+  });
+
+  const [paragraphRef, paragraphInView] = useInView({
+    triggerOnce: false,
+    rootMargin: '-100px 0px',
+  });
+
   return (
     <section
       ref={innerRef}
@@ -27,16 +39,34 @@ const Skills = ({ innerRef }) => {
         <hr className='border-8 border-dark w-1/3' />
       </div> */}
 
-      <div className='flex flex-col px-2 xs:px-5 lg:px-20 space-y-8 xs:space-y-16 text-center lg:text-right'>
-        <h1 className='font-bold text-4xl xs:text-5xl md:text-8xl 2xl:text-9xl uppercase text-dark'>
+      <div className='flex flex-col px-5 lg:px-20 space-y-8 xs:space-y-16 text-center lg:text-right'>
+        <motion.h1
+          ref={titleRef}
+          initial={{ opacity: 0, translateX: 50 }}
+          animate={{
+            opacity: titleInView ? 1 : 0,
+            translateX: titleInView ? 0 : 50,
+          }}
+          transition={{ duration: 1 }}
+          className='font-bold text-4xl xs:text-5xl md:text-8xl 2xl:text-9xl uppercase text-dark'
+        >
           Skills
-        </h1>
+        </motion.h1>
 
-        <p className='text-sm xs:text-lg md:text-xl 2xl:text-2xl text-gray w-full lg:w-1/2 lg:self-end font-body'>
+        <motion.p
+          ref={paragraphRef}
+          initial={{ opacity: 0, translateX: 50 }}
+          animate={{
+            opacity: paragraphInView ? 1 : 0,
+            translateX: paragraphInView ? 0 : 50,
+          }}
+          transition={{ duration: 1 }}
+          className='text-sm xs:text-lg md:text-xl 2xl:text-2xl text-gray w-full lg:w-1/2 lg:self-end font-bold lg:font-bold font-body'
+        >
           Here is some skills i have understand how it works. I might not
           extremely good at those, but i have huge willing to learn so i can be
           good at it.
-        </p>
+        </motion.p>
       </div>
 
       <div>
@@ -78,7 +108,7 @@ const Skills = ({ innerRef }) => {
       </div>
 
       <div>
-        <InfiniteLooper speed='20' direction='left'>
+        <InfiniteLooper speed='20' direction='reverse'>
           <div className='flex space-x-10 md:space-x-20'>
             <img
               className='w-24 h-24 md:w-32 md:h-32 object-contain ml-10 md:ml-20'

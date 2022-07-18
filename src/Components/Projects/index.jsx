@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import ProjectCard from '../ProjectCard';
 
@@ -6,6 +8,16 @@ import { projectsData } from '../../Data/projectsData';
 
 const Projects = ({ innerRef }) => {
   const [projects, setProjects] = useState([]);
+
+  const [titleRef, titleInView] = useInView({
+    triggerOnce: false,
+    rootMargin: '-100px 0px',
+  });
+
+  const [buttonRef, buttonInView] = useInView({
+    triggerOnce: false,
+    rootMargin: '-100px 0px',
+  });
 
   const populateProjects = () => {
     if (projectsData.length >= 7) {
@@ -38,11 +50,20 @@ const Projects = ({ innerRef }) => {
     <section
       ref={innerRef}
       id='projects'
-      className={`px-2 xs:px-5 lg:px-20 py-8 md:py-16  bg-light text-dark flex flex-col space-y-3 justify-between xs:space-y-12`}
+      className={`px-5 lg:px-20 py-8 md:py-16  bg-light text-dark flex flex-col space-y-3 justify-between xs:space-y-12`}
     >
-      <h1 className='text-4xl xs:text-5xl md:text-8xl 2xl:text-9xl text-center lg:text-left uppercase font-heading font-bold'>
+      <motion.h1
+        ref={titleRef}
+        initial={{ opacity: 0, translateY: 100 }}
+        animate={{
+          opacity: titleInView ? 1 : 0,
+          translateY: titleInView ? 0 : 100,
+        }}
+        transition={{ duration: 1 }}
+        className='text-4xl xs:text-5xl md:text-8xl 2xl:text-9xl text-center lg:text-left uppercase font-heading font-bold'
+      >
         What I've Made
-      </h1>
+      </motion.h1>
 
       <div className='flex flex-wrap w-full justify-center gap-5 lg:gap-10'>
         {projects.map((project, index) => {
@@ -52,15 +73,35 @@ const Projects = ({ innerRef }) => {
 
       {projects.length === projectsData.length ? (
         <div className='flex justify-center'>
-          <button onClick={seeLessHandler} className='primary-button-dark'>
+          <motion.button
+            ref={buttonRef}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: buttonInView ? 1 : 0,
+              translateY: buttonInView ? 0 : 100,
+            }}
+            transition={{ duration: 1 }}
+            onClick={seeLessHandler}
+            className='primary-button-dark'
+          >
             See Less
-          </button>
+          </motion.button>
         </div>
       ) : (
         <div className='flex justify-center'>
-          <button onClick={seeMoreHandler} className='primary-button-dark'>
+          <motion.button
+            ref={buttonRef}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: buttonInView ? 1 : 0,
+              translateY: buttonInView ? 0 : 100,
+            }}
+            transition={{ duration: 1 }}
+            onClick={seeMoreHandler}
+            className='primary-button-dark'
+          >
             See More
-          </button>
+          </motion.button>
         </div>
       )}
     </section>

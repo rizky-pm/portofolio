@@ -1,10 +1,26 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const ExperienceCard = ({ data }) => {
+  const [cardRef, cardInView] = useInView({
+    triggerOnce: false,
+    rootMargin: '-100px 0px',
+  });
+
   const { position, company, location, duration, description } = data;
 
   return (
-    <div className='flex flex-col text-center lg:text-left'>
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, translateX: 25 }}
+      animate={{
+        opacity: cardInView ? 1 : 0,
+        translateX: cardInView ? 0 : 25,
+      }}
+      transition={{ duration: 1 }}
+      className='flex flex-col text-center lg:text-left'
+    >
       <span className='font-heading font-bold text-md xs:text-lg md:text-3xl text-lightBlue'>
         {position}
       </span>
@@ -18,7 +34,7 @@ const ExperienceCard = ({ data }) => {
       <span className='text-lightGray text-sm xs:text-base md:text-xl font-body'>
         {description}
       </span>
-    </div>
+    </motion.div>
   );
 };
 
