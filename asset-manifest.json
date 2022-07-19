@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portofolio/static/css/main.9d08a68d.css",
-    "main.js": "/portofolio/static/js/main.c604d8b6.js",
+    "main.css": "/portofolio/static/css/main.1a1e7eb1.css",
+    "main.js": "/portofolio/static/js/main.1515285e.js",
     "static/media/loopstudios-header.png": "/portofolio/static/media/loopstudios-header.c6a837f78394e81796ed.png",
     "static/media/crowdfunding.png": "/portofolio/static/media/crowdfunding.b707863487498e3b5cb4.png",
     "static/media/sunnyside-header.png": "/portofolio/static/media/sunnyside-header.57c6ddfc2f1c53db0eff.png",
@@ -41,11 +41,11 @@
     "static/media/tailwind-css-bnw.png": "/portofolio/static/media/tailwind-css-bnw.243b456ea5c4541692d3.png",
     "static/media/expressjs-bnw.png": "/portofolio/static/media/expressjs-bnw.dd7cc183d77b1f45c7dc.png",
     "index.html": "/portofolio/index.html",
-    "main.9d08a68d.css.map": "/portofolio/static/css/main.9d08a68d.css.map",
-    "main.c604d8b6.js.map": "/portofolio/static/js/main.c604d8b6.js.map"
+    "main.1a1e7eb1.css.map": "/portofolio/static/css/main.1a1e7eb1.css.map",
+    "main.1515285e.js.map": "/portofolio/static/js/main.1515285e.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d08a68d.css",
-    "static/js/main.c604d8b6.js"
+    "static/css/main.1a1e7eb1.css",
+    "static/js/main.1515285e.js"
   ]
 }
