@@ -3,22 +3,22 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const ExperienceCard = ({ data }) => {
-  const [cardRef, cardInView] = useInView({
-    triggerOnce: false,
-    rootMargin: '-100px 0px',
-  });
+  // const [cardRef, cardInView] = useInView({
+  //   triggerOnce: false,
+  //   rootMargin: '-100px 0px',
+  // });
 
   const { position, company, location, duration, description } = data;
 
   return (
     <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, translateX: 25 }}
-      animate={{
-        opacity: cardInView ? 1 : 0,
-        translateX: cardInView ? 0 : 25,
-      }}
-      transition={{ duration: 1 }}
+      // ref={cardRef}
+      // initial={{ opacity: 0, translateX: 10 }}
+      // animate={{
+      //   opacity: cardInView ? 1 : 0,
+      //   translateX: cardInView ? 0 : 10,
+      // }}
+      // transition={{ duration: 1 }}
       className='flex flex-col text-center lg:text-left'
     >
       <span className='font-heading font-bold text-md xs:text-lg md:text-3xl text-lightBlue'>

@@ -1,18 +1,46 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion';
 
 const Navbar = ({ isMenuActive, toggleNav }) => {
+  const controlsHamburgerFirstLine = useAnimationControls();
+  const controlsHamburgerSecondLine = useAnimationControls();
+  const controlsHamburgerThirdLine = useAnimationControls();
+
   return (
     <nav className='fixed flex items-center overflow-hidden px-5 h-16 z-20 text-light bg-dark w-full md:px-20'>
       <button
-        onClick={toggleNav}
+        onClick={() => {
+          toggleNav();
+          controlsHamburgerFirstLine({
+            transformOrigin: 'top left',
+            transform: 'rotate(45deg)',
+          });
+
+          controlsHamburgerFirstLine({
+            scale: 0,
+          });
+
+          controlsHamburgerFirstLine({
+            transformOrigin: 'bottom left',
+            transform: 'rotate(-45deg)',
+          });
+        }}
         className={`block md:hidden ${
           isMenuActive ? 'hamburger-active' : ''
         } md:hidden`}
       >
-        <span className='hamburger-line origin-top-left transition duration-300 ease-in-out'></span>
-        <span className='hamburger-line transition duration-300 ease-in-out'></span>
-        <span className='hamburger-line origin-bottom-left transition duration-300 ease-in-out'></span>
+        <motion.span
+          animate={controlsHamburgerFirstLine}
+          className='hamburger-line origin-top-left transition duration-300 ease-in-out'
+        ></motion.span>
+        <motion.span
+          animate={controlsHamburgerSecondLine}
+          className='hamburger-line transition duration-300 ease-in-out'
+        ></motion.span>
+        <motion.span
+          animate={controlsHamburgerThirdLine}
+          className='hamburger-line origin-bottom-left transition duration-300 ease-in-out'
+        ></motion.span>
       </button>
 
       <div className='flex justify-between text-xl w-full'>

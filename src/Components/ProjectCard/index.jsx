@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+import { fadeUpAnimation } from '../../Utils/Animation';
+
 import Code from '../Icons/Code';
 import Link from '../Icons/Link';
 
@@ -11,19 +13,18 @@ const ProjectCard = ({ data }) => {
   const [isHover, setIsHover] = useState(false);
 
   const [cardRef, cardInView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     rootMargin: '-100px 0px',
   });
+
+  const cardMotion = fadeUpAnimation(cardInView);
 
   return (
     <motion.div
       ref={cardRef}
-      initial={{ opacity: 0, translateY: 100 }}
-      animate={{
-        opacity: cardInView ? 1 : 0,
-        translateY: cardInView ? 0 : 100,
-      }}
-      transition={{ duration: 1 }}
+      initial={cardMotion.initial}
+      animate={cardMotion.animate}
+      transition={cardMotion.transition}
       onMouseEnter={() => {
         setIsHover(true);
       }}

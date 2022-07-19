@@ -42,10 +42,10 @@ const Skills = ({ innerRef }) => {
       <div className='flex flex-col px-5 lg:px-20 space-y-8 xs:space-y-16 text-center lg:text-right'>
         <motion.h1
           ref={titleRef}
-          initial={{ opacity: 0, translateX: 50 }}
+          initial={{ opacity: 0, translateY: 20 }}
           animate={{
             opacity: titleInView ? 1 : 0,
-            translateX: titleInView ? 0 : 50,
+            translateY: titleInView ? 0 : 20,
           }}
           transition={{ duration: 1 }}
           className='font-bold text-4xl xs:text-5xl md:text-8xl 2xl:text-9xl uppercase text-dark'
@@ -55,10 +55,10 @@ const Skills = ({ innerRef }) => {
 
         <motion.p
           ref={paragraphRef}
-          initial={{ opacity: 0, translateX: 50 }}
+          initial={{ opacity: 0, translateY: 20 }}
           animate={{
             opacity: paragraphInView ? 1 : 0,
-            translateX: paragraphInView ? 0 : 50,
+            translateY: paragraphInView ? 0 : 20,
           }}
           transition={{ duration: 1 }}
           className='text-sm xs:text-lg md:text-xl 2xl:text-2xl text-gray w-full lg:w-1/2 lg:self-end font-bold lg:font-bold font-body'

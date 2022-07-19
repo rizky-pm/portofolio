@@ -10,22 +10,22 @@ import Twitter from '../Icons/Twitter';
 const Contact = ({ innerRef }) => {
   const [titleRef, titleInView] = useInView({
     triggerOnce: false,
-    rootMargin: '-100px 0px',
+    rootMargin: '0px 0px',
   });
 
   const [descriptionRef, descriptionInView] = useInView({
     triggerOnce: false,
-    rootMargin: '-100px 0px',
+    rootMargin: '0px 0px',
   });
 
   const [buttonRef, buttonInView] = useInView({
     triggerOnce: false,
-    rootMargin: '-100px 0px',
+    rootMargin: '0px 0px',
   });
 
   const [dividerRef, dividerInView] = useInView({
     triggerOnce: false,
-    rootMargin: '-100px 0px',
+    rootMargin: '0px 0px',
   });
 
   const [iconsRef, iconsInView] = useInView({
@@ -41,10 +41,10 @@ const Contact = ({ innerRef }) => {
     >
       <motion.h1
         ref={titleRef}
-        initial={{ opacity: 0, translateY: 50 }}
+        initial={{ opacity: 0, translateY: 25 }}
         animate={{
           opacity: titleInView ? 1 : 0,
-          translateY: titleInView ? 0 : 50,
+          translateY: titleInView ? 0 : 25,
         }}
         transition={{ duration: 1 }}
         className='text-4xl xs:text-5xl md:text-8xl 2xl:text-9xl text-center tracking-widest font-heading font-bold uppercase'
@@ -56,10 +56,10 @@ const Contact = ({ innerRef }) => {
         <div className='flex flex-col justify-evenly items-center w-full lg:w-1/2 h-full space-y-2 xs:space-y-8 '> */}
       <motion.p
         ref={descriptionRef}
-        initial={{ opacity: 0, translateY: 50 }}
+        initial={{ opacity: 0, translateY: 25 }}
         animate={{
           opacity: descriptionInView ? 1 : 0,
-          translateY: descriptionInView ? 0 : 50,
+          translateY: descriptionInView ? 0 : 25,
         }}
         transition={{ duration: 1 }}
         className='text-lightGray font-bold lg:font-bold font-body text-center text-sm xs:text-lg md:text-xl 2xl:text-2xl w-full lg:w-1/2'
@@ -69,10 +69,10 @@ const Contact = ({ innerRef }) => {
       </motion.p>
       <motion.a
         ref={buttonRef}
-        initial={{ opacity: 0, translateY: 50 }}
+        initial={{ opacity: 0, translateY: 25 }}
         animate={{
           opacity: buttonInView ? 1 : 0,
-          translateY: buttonInView ? 0 : 50,
+          translateY: buttonInView ? 0 : 25,
         }}
         transition={{ duration: 1 }}
         href='mailto:rizkymahendra2346@gmail.com'
@@ -84,10 +84,10 @@ const Contact = ({ innerRef }) => {
 
       <motion.div
         ref={dividerRef}
-        initial={{ opacity: 0, translateY: 50 }}
+        initial={{ opacity: 0, translateY: 25 }}
         animate={{
           opacity: dividerInView ? 1 : 0,
-          translateY: dividerInView ? 0 : 50,
+          translateY: dividerInView ? 0 : 25,
         }}
         transition={{ duration: 1 }}
         className='flex w-full items-center gap-2'
@@ -101,10 +101,10 @@ const Contact = ({ innerRef }) => {
 
       <motion.div
         ref={iconsRef}
-        initial={{ opacity: 0, translateY: 50 }}
+        initial={{ opacity: 0, translateY: 25 }}
         animate={{
           opacity: iconsInView ? 1 : 0,
-          translateY: iconsInView ? 0 : 50,
+          translateY: iconsInView ? 0 : 25,
         }}
         transition={{ duration: 1 }}
         className='flex w-full justify-around 2xl:justify-center 2xl:space-x-20'

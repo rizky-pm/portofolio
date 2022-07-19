@@ -26,10 +26,10 @@ const Experience = ({ innerRef }) => {
       <div className='w-full lg:w-1/2 flex flex-col justify-between uppercase text-right lg:pr-8'>
         <motion.p
           ref={titleRef}
-          initial={{ opacity: 0, translateX: 25 }}
+          initial={{ opacity: 0, translateY: 20 }}
           animate={{
             opacity: titleInView ? 1 : 0,
-            translateX: titleInView ? 0 : 25,
+            translateY: titleInView ? 0 : 20,
           }}
           transition={{ duration: 1 }}
           className='2xl:text-9xl md:text-8xl xs:text-5xl text-4xl font-bold text-center lg:text-right'
@@ -40,10 +40,10 @@ const Experience = ({ innerRef }) => {
 
       <motion.div
         ref={cardRef}
-        initial={{ opacity: 0, translateX: -25 }}
+        initial={{ opacity: 0, translateY: 20 }}
         animate={{
           opacity: cardInView ? 1 : 0,
-          translateX: cardInView ? 0 : -25,
+          translateY: cardInView ? 0 : 20,
         }}
         transition={{ duration: 1 }}
         className='flex flex-col justify-center w-full lg:w-1/2 space-y-6 lg:space-y-12 lg:pl-8 lg:border-l-8 lg:border-light'

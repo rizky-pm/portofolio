@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import ProjectCard from '../ProjectCard';
 
 import { projectsData } from '../../Data/projectsData';
+import { fadeUpAnimation } from '../../Utils/Animation';
 
 const Projects = ({ innerRef }) => {
   const [projects, setProjects] = useState([]);
@@ -16,8 +17,11 @@ const Projects = ({ innerRef }) => {
 
   const [buttonRef, buttonInView] = useInView({
     triggerOnce: false,
-    rootMargin: '-100px 0px',
+    rootMargin: '-50px 0px',
   });
+
+  const titleMotion = fadeUpAnimation(titleInView);
+  const buttonMotion = fadeUpAnimation(buttonInView);
 
   const populateProjects = () => {
     if (projectsData.length >= 7) {
@@ -54,12 +58,9 @@ const Projects = ({ innerRef }) => {
     >
       <motion.h1
         ref={titleRef}
-        initial={{ opacity: 0, translateY: 100 }}
-        animate={{
-          opacity: titleInView ? 1 : 0,
-          translateY: titleInView ? 0 : 100,
-        }}
-        transition={{ duration: 1 }}
+        initial={titleMotion.initial}
+        animate={titleMotion.animate}
+        transition={titleMotion.transition}
         className='text-4xl xs:text-5xl md:text-8xl 2xl:text-9xl text-center lg:text-left uppercase font-heading font-bold'
       >
         What I've Made
@@ -75,12 +76,9 @@ const Projects = ({ innerRef }) => {
         <div className='flex justify-center'>
           <motion.button
             ref={buttonRef}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: buttonInView ? 1 : 0,
-              translateY: buttonInView ? 0 : 100,
-            }}
-            transition={{ duration: 1 }}
+            initial={buttonMotion.initial}
+            animate={buttonMotion.animate}
+            transition={buttonMotion.transition}
             onClick={seeLessHandler}
             className='primary-button-dark'
           >
@@ -91,12 +89,9 @@ const Projects = ({ innerRef }) => {
         <div className='flex justify-center'>
           <motion.button
             ref={buttonRef}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: buttonInView ? 1 : 0,
-              translateY: buttonInView ? 0 : 100,
-            }}
-            transition={{ duration: 1 }}
+            initial={buttonMotion.initial}
+            animate={buttonMotion.animate}
+            transition={buttonMotion.transition}
             onClick={seeMoreHandler}
             className='primary-button-dark'
           >

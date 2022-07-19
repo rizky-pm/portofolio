@@ -23,7 +23,7 @@ module.exports = {
       //   '2xl': '1536px',
       // },
       colors: {
-        dark: 'hsla(218, 58%, 4%, 1)',
+        dark: '#000000',
         lightGray: 'hsla(240, 8%, 65%, 1)',
         gray: '#3B485F',
         blue: 'hsla(215, 45%, 53%, 1)',
