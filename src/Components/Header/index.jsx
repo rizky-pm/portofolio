@@ -7,8 +7,8 @@ import {
   animationVariants,
 } from '../../Utils/Animation';
 
-import ImageLandscape from '../../Images/self-landscape-2.png';
-import ImagePortrait from '../../Images/self-portrait-3.png';
+import ImageLandscape from '../../Images/self-landscape.png';
+import ImagePortrait from '../../Images/self-portrait.png';
 
 const Header = ({ innerRef }) => {
   const isMedium = useIsMd();

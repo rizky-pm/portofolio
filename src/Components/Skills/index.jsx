@@ -203,15 +203,6 @@ const Skills = ({ innerRef }) => {
           <div className='hidden'></div>
         </InfiniteLooper>
       </motion.div>
-
-      {/* <div className='space-y-4 w-1/2'> */}
-
-      {/* <blockquote className='italic'>
-              &ldquo;For the things we have to learn before we can do them, we
-              learn by doing them.&rdquo;
-            </blockquote>
-            <span>Aristotle</span> */}
-      {/* </div> */}
     </section>
   );
 };
