@@ -2,10 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import { useIsMd } from '../../Utils/useMediaQuery';
-import {
-  largerFadeUpAnimation,
-  animationVariants,
-} from '../../Utils/Animation';
 
 import ImageLandscape from '../../Images/self-landscape.png';
 import ImagePortrait from '../../Images/self-portrait.png';
@@ -13,35 +9,51 @@ import ImagePortrait from '../../Images/self-portrait.png';
 const Header = ({ innerRef }) => {
   const isMedium = useIsMd();
 
+  const fadeUpAnimation = (delay) => {
+    const delayedFadeUpAnimation = {
+      initial: { opacity: 0, translateY: 100 },
+      animate: { opacity: 1, translateY: 0 },
+      transition: { duration: 1, delay: delay },
+    };
+
+    return delayedFadeUpAnimation;
+  };
+
+  const animationVariants = (animationOne, animationTwo, media) => {
+    const variants = media ? animationOne : animationTwo;
+
+    return variants;
+  };
+
   const greetingMotion = animationVariants(
-    largerFadeUpAnimation(3),
-    largerFadeUpAnimation(0),
+    fadeUpAnimation(3),
+    fadeUpAnimation(0),
     isMedium
   );
 
   const fullNameMotion = animationVariants(
-    largerFadeUpAnimation(3.5),
-    largerFadeUpAnimation(1),
+    fadeUpAnimation(3.5),
+    fadeUpAnimation(1),
     isMedium
   );
 
   console.log({ fullNameMotion });
 
   const positionMotion = animationVariants(
-    largerFadeUpAnimation(4),
-    largerFadeUpAnimation(1.5),
+    fadeUpAnimation(4),
+    fadeUpAnimation(1.5),
     isMedium
   );
 
   const summaryMotion = animationVariants(
-    largerFadeUpAnimation(4.5),
-    largerFadeUpAnimation(2),
+    fadeUpAnimation(4.5),
+    fadeUpAnimation(2),
     isMedium
   );
 
   const heroImageMotion = animationVariants(
-    largerFadeUpAnimation(5),
-    largerFadeUpAnimation(2.5),
+    fadeUpAnimation(5),
+    fadeUpAnimation(2.5),
     isMedium
   );
 

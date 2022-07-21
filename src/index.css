@@ -78,6 +78,22 @@ html {
       @apply text-lightGray text-sm xs:text-base md:text-xl font-body
     }
 
+    .navbar {
+      box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+    }
+
+    @supports (-webkit-backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)) or (backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)) {
+      .navbar-b.navbar-reduce {
+        transition: all 0.5s ease-in-out;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+
+        @apply bg-dark
+      }
+    }
+
       .basic-transition {
         @apply transition-all ease-linear duration-[0.25s];
       }

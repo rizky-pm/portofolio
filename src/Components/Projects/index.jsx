@@ -5,23 +5,9 @@ import { useInView } from 'react-intersection-observer';
 import ProjectCard from '../ProjectCard';
 
 import { projectsData } from '../../Data/projectsData';
-import { fadeUpAnimation } from '../../Utils/Animation';
 
 const Projects = ({ innerRef }) => {
   const [projects, setProjects] = useState([]);
-
-  const [titleRef, titleInView] = useInView({
-    triggerOnce: false,
-    rootMargin: '-100px 0px',
-  });
-
-  const [buttonRef, buttonInView] = useInView({
-    triggerOnce: false,
-    rootMargin: '-50px 0px',
-  });
-
-  const titleMotion = fadeUpAnimation(titleInView);
-  const buttonMotion = fadeUpAnimation(buttonInView);
 
   const populateProjects = () => {
     if (projectsData.length >= 7) {
@@ -46,6 +32,26 @@ const Projects = ({ innerRef }) => {
     populateProjects();
   };
 
+  const [titleRef, titleInView] = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  });
+
+  const [lineRef, lineInView] = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  });
+
+  const [projectRef, projectInView] = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  });
+
+  const [buttonRef, buttonInView] = useInView({
+    triggerOnce: true,
+    rootMargin: '-150px 0px',
+  });
+
   useEffect(() => {
     populateProjects();
   }, []);
@@ -53,14 +59,35 @@ const Projects = ({ innerRef }) => {
   return (
     <section
       ref={innerRef}
-      className='flex flex-col bg-dark text-light px-5 md:px-20 lg:px-44 xl:px-96 py-8 md:py-16 space-y-8'
+      className='flex flex-col bg-dark text-light px-5 md:px-20 xl:px-40 2xl:px-96 py-8 md:py-16 space-y-8'
     >
       <div className='flex items-center'>
-        <h1 className='main-heading'>What i've made</h1>
-        <hr className='h-1 md:h-2 w-full bg-light' />
+        {/* Title */}
+        <motion.h1
+          ref={titleRef}
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{
+            opacity: titleInView ? 1 : 0,
+            scaleX: titleInView ? 1 : 0,
+          }}
+          transition={{ duration: 1 }}
+          className='main-heading origin-left'
+        >
+          I made these
+        </motion.h1>
+
+        {/* Border */}
+        <motion.hr
+          ref={lineRef}
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: titleInView ? 1 : 0 }}
+          transition={{ duration: 1, delay: 1 }}
+          className='h-1 md:h-2 w-full bg-light origin-left'
+        />
       </div>
 
-      <div className='flex flex-col w-full justify-center space-y-44 lg:space-y-8 md:items-center'>
+      {/* Project */}
+      <div className='flex flex-col w-full justify-center items-center space-y-12 lg:space-y-8'>
         {projects.map((project, index) => {
           return <ProjectCard key={index} data={project} index={index} />;
         })}
@@ -68,11 +95,14 @@ const Projects = ({ innerRef }) => {
 
       {projects.length === projectsData.length ? (
         <div className='flex justify-center'>
+          {/* Button */}
           <motion.button
             ref={buttonRef}
-            initial={buttonMotion.initial}
-            animate={buttonMotion.animate}
-            transition={buttonMotion.transition}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: buttonInView ? 1 : 0,
+            }}
+            transition={{ duration: 1 }}
             onClick={seeLessHandler}
             className='primary-button-light'
           >
@@ -81,11 +111,14 @@ const Projects = ({ innerRef }) => {
         </div>
       ) : (
         <div className='flex justify-center'>
+          {/* Button */}
           <motion.button
             ref={buttonRef}
-            initial={buttonMotion.initial}
-            animate={buttonMotion.animate}
-            transition={buttonMotion.transition}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: buttonInView ? 1 : 0,
+            }}
+            transition={{ duration: 1 }}
             onClick={seeMoreHandler}
             className='primary-button-light'
           >

@@ -1,31 +1,30 @@
-import profileCardThumbnail from '../Images/profile-card.png';
-import nftPreviewCardThumbnail from '../Images/nft-preview-card.png';
-import articlePreviewComponentThumbnail from '../Images/article-preview-component.png';
-import statsPreviewCardThumbnail from '../Images/stats-preview-card.png';
-import threeColumnPreviewThumbnail from '../Images/three-column-preview.png';
-import faqAccordionCardThumbnail from '../Images/faq-accordion-card.png';
-import socialProofSectionThumbnail from '../Images/social-proof-section.png';
-import fourCardFeatureSectionThumbnail from '../Images/four-card-feature-section.png';
-import baseApparelThumbnail from '../Images/base-apparel.png';
-import introComponentThumbnail from '../Images/intro-component.png';
-import singlePriceGridThumbnail from '../Images/single-price-grid-component.png';
-import pingThumbnail from '../Images/ping-page.png';
-// import sunnysideThumbnail from '../Images/sunnyside.png';
-import timeTrackingDashboardThumbnail from '../Images/time-tracking-dashboard.png';
-import splitterThumbnail from '../Images/splitter.png';
-// import blogrThumbnail from '../Images/blogr.png';
+import profileCardThumbnail from '../Images/profile-card-resized.png';
+import nftPreviewCardThumbnail from '../Images/nft-preview-card-resized.png';
+import articlePreviewComponentThumbnail from '../Images/article-preview-component-resized.png';
+import statsPreviewCardThumbnail from '../Images/stats-preview-card-resized.png';
+import threeColumnPreviewThumbnail from '../Images/three-column-preview-resized.png';
+import faqAccordionCardThumbnail from '../Images/faq-accordion-card-resized.png';
+import socialProofSectionThumbnail from '../Images/social-proof-section-resized.png';
+import fourCardFeatureSectionThumbnail from '../Images/four-card-feature-section-resized.png';
+import baseApparelThumbnail from '../Images/base-apparel-resized.png';
+import introComponentThumbnail from '../Images/intro-component-resized.png';
+import singlePriceGridThumbnail from '../Images/single-price-grid-component-resized.png';
+import pingThumbnail from '../Images/ping-page-resized.png';
+// import sunnysideThumbnail from '../Images/sunnyside-resized.png';
+import timeTrackingDashboardThumbnail from '../Images/time-tracking-dashboard-resized.png';
+// import blogrThumbnail from '../Images/blogr-resized.png';
 import crowdfundingThumbnail from '../Images/crowdfunding.png';
-// import loopstudiosThumbnail from '../Images/loopstudios.png';
-import testimonialsThumbnail from '../Images/testimonials.png';
-import interactivePricingComponentThumbnail from '../Images/interactive-pricing-component.png';
-import fyloThumbnail from '../Images/fylo.png';
-import codingBootcampThumbnail from '../Images/coding-bootcamp-testimonials.jpg';
-import socmedDashboardThumbnail from '../Images/socmed-dashboard.png';
+// import loopstudiosThumbnail from '../Images/loopstudios-resized.png';
+import testimonialsThumbnail from '../Images/testimonials-resized.png';
+import interactivePricingComponentThumbnail from '../Images/interactive-pricing-component-resized.png';
+import fyloThumbnail from '../Images/fylo-resized.png';
+import codingBootcampThumbnail from '../Images/coding-bootcamp-testimonials-resized.jpg';
+import socmedDashboardThumbnail from '../Images/socmed-dashboard-resized.png';
 
 import sunnysideHeaderThumbnail from '../Images/sunnyside-header.png';
 import blogrHeaderThumbnail from '../Images/blogr-header.png';
-import loopstudiosHeaderThumbnail from '../Images/loopstudios-header.png';
-import splitterHeaderThumbnail from '../Images/splitter-header.png';
+import loopstudiosHeaderThumbnail from '../Images/loopstudios-header-resized.png';
+import splitterHeaderThumbnail from '../Images/splitter-resized.png';
 
 export const projectsData = [
   {

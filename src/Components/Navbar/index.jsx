@@ -1,50 +1,22 @@
 import React from 'react';
-import { motion, useAnimationControls } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Navbar = ({ isMenuActive, toggleNav }) => {
-  const controlsHamburgerFirstLine = useAnimationControls();
-  const controlsHamburgerSecondLine = useAnimationControls();
-  const controlsHamburgerThirdLine = useAnimationControls();
-
   return (
-    <nav className='fixed flex items-center overflow-hidden h-16 z-20 text-light bg-dark w-full px-5 md:px-20 xl:px-40'>
+    <nav className='fixed flex items-center overflow-hidden h-16 z-20 text-light bg-dark/70 w-full px-5 md:px-20 xl:px-40 backdrop-blur-sm navbar'>
       <button
         onClick={() => {
           toggleNav();
-          controlsHamburgerFirstLine({
-            transformOrigin: 'top left',
-            transform: 'rotate(45deg)',
-          });
-
-          controlsHamburgerFirstLine({
-            scale: 0,
-          });
-
-          controlsHamburgerFirstLine({
-            transformOrigin: 'bottom left',
-            transform: 'rotate(-45deg)',
-          });
         }}
-        className={`block md:hidden ${
-          isMenuActive ? 'hamburger-active' : ''
-        } md:hidden`}
+        className={`block lg:hidden ${isMenuActive ? 'hamburger-active' : ''}`}
       >
-        <motion.span
-          animate={controlsHamburgerFirstLine}
-          className='hamburger-line origin-top-left transition duration-300 ease-in-out'
-        ></motion.span>
-        <motion.span
-          animate={controlsHamburgerSecondLine}
-          className='hamburger-line transition duration-300 ease-in-out'
-        ></motion.span>
-        <motion.span
-          animate={controlsHamburgerThirdLine}
-          className='hamburger-line origin-bottom-left transition duration-300 ease-in-out'
-        ></motion.span>
+        <span className='hamburger-line origin-top-left transition duration-300 ease-in-out'></span>
+        <span className='hamburger-line transition duration-300 ease-in-out'></span>
+        <span className='hamburger-line origin-bottom-left transition duration-300 ease-in-out'></span>
       </button>
 
       <div className='flex justify-between text-xl w-full'>
-        <div className='left hidden md:block'>
+        <div className='left hidden lg:block'>
           <motion.a
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -56,42 +28,68 @@ const Navbar = ({ isMenuActive, toggleNav }) => {
           </motion.a>
         </div>
 
-        <div className='right hidden md:block space-x-12'>
+        <div className='right hidden lg:block space-x-12'>
           <motion.a
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            href='#projects'
+            href='#about'
             className='link'
           >
-            Projects
+            About Me
           </motion.a>
+
           <motion.a
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}
-            href='#experience'
-            className='link'
-          >
-            Experience
-          </motion.a>
-          <motion.a
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
+            transition={{ duration: 1, delay: 2.5 }}
             href='#skills'
             className='link'
           >
             Skills
           </motion.a>
+
           <motion.a
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2.5 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            href='#projects'
+            className='link'
+          >
+            Projects
+          </motion.a>
+
+          <motion.a
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }}
+            href='#experience'
+            className='link'
+          >
+            Experience
+          </motion.a>
+
+          <motion.a
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 3 }}
             href='#contact'
             className='link'
           >
-            Contact
+            Get in touch
+          </motion.a>
+
+          <motion.a
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 3 }}
+            href='
+            https://drive.google.com/drive/folders/165X36l7AT792HZk_NhK00GBz72rwo2b9?usp=sharing'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='link'
+          >
+            Useful Documents
           </motion.a>
         </div>
       </div>
