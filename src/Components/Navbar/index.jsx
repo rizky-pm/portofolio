@@ -22,7 +22,7 @@ const Navbar = ({ isMenuActive, toggleNav }) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
             href='#main'
-            className='link'
+            className='link font-bold font-heading'
           >
             RPM
           </motion.a>

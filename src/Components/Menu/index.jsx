@@ -104,7 +104,7 @@ const Menu = ({ isMenuActive, toggleNav }) => {
             >
               <motion.li variants={itemVariants}>
                 <button
-                  className='uppercase font-heading font-semibold text-2xl'
+                  className='uppercase font-heading font-bold text-2xl'
                   onClick={() => {
                     toggleNav('top');
                   }}

@@ -113,8 +113,8 @@ const Header = ({ innerRef }) => {
           >
             i'm a <span className='text-lightBlue font-bold'>frontend</span>{' '}
             developer with speciality{' '}
-            <span className='text-lightBlue font-bold'>React.js</span>. I like
-            to write clean code (because its beautiful to read) and reusable for
+            <span className='text-lightBlue font-bold'>React.js</span> based on
+            Tangerang, Indonesia. I like to write clean code and reusable for
             future usage.
           </motion.p>
         </div>
