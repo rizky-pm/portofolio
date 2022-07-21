@@ -4,7 +4,7 @@ const Link = ({ width, height }) => {
   return (
     <div>
       <svg
-        className={`${width} ${height} text-light hover:text-lightBlue hover:cursor-pointer transition`}
+        className={`${width} ${height} hover:cursor-pointer`}
         width='24'
         height='24'
         viewBox='0 0 24 24'

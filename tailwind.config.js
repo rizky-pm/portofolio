@@ -2,7 +2,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  mode: 'jit',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
@@ -25,7 +24,7 @@ module.exports = {
       colors: {
         dark: '#000000',
         lightGray: 'hsla(240, 8%, 65%, 1)',
-        gray: '#3B485F',
+        gray: '#28262C',
         blue: 'hsla(215, 45%, 53%, 1)',
         lightBlue: 'hsla(210, 63%, 77%, 1)',
         veryLightBlue: 'hsla(212, 53%, 83%, 1)',

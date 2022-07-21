@@ -1,13 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
 const InfiniteLooper = function InfiniteLooper({ speed, direction, children }) {
-  const [looperRef, looperInView] = useInView({
-    triggerOnce: false,
-    rootMargin: '-100px 0px',
-  });
-
   const [looperInstances, setLooperInstances] = useState(1);
   const outerRef = useRef(null);
   const innerRef = useRef(null);
@@ -55,15 +48,7 @@ const InfiniteLooper = function InfiniteLooper({ speed, direction, children }) {
   }, [looperInstances, setupInstances]);
 
   return (
-    <div
-      className='looper'
-      ref={outerRef}
-      // initial={{ opacity: 0 }}
-      // animate={{
-      //   opacity: looperInView ? 1 : 0,
-      // }}
-      // transition={{ duration: 1 }}
-    >
+    <div className='looper' ref={outerRef}>
       <div className='looper__innerList' ref={innerRef} data-animate='true'>
         {[...Array(looperInstances)].map((_, ind) => (
           <div

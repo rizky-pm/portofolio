@@ -64,6 +64,20 @@ html {
       }
     }
 
+    .main-heading {
+      @apply xl:text-7xl md:text-6xl xs:text-5xl text-2xl font-bold uppercase
+    }
+
+    .secondary-heading {
+      @apply font-body font-bold text-sm xs:text-base md:text-2xl lg:text-xl 2xl:text-3xl uppercase
+    }
+
+    .paragraph {
+      /* @apply font-body text-sm xs:text-base md:text-xl lg:text-lg 2xl:text-2xl text-lightGray */
+
+      @apply text-lightGray text-sm xs:text-base md:text-xl font-body
+    }
+
       .basic-transition {
         @apply transition-all ease-linear duration-[0.25s];
       }

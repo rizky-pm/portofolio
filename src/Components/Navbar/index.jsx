@@ -7,7 +7,7 @@ const Navbar = ({ isMenuActive, toggleNav }) => {
   const controlsHamburgerThirdLine = useAnimationControls();
 
   return (
-    <nav className='fixed flex items-center overflow-hidden px-5 h-16 z-20 text-light bg-dark w-full md:px-20'>
+    <nav className='fixed flex items-center overflow-hidden h-16 z-20 text-light bg-dark w-full px-5 md:px-20 xl:px-40'>
       <button
         onClick={() => {
           toggleNav();

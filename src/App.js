@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Navbar from './Components/Navbar';
 import Menu from './Components/Menu';
 import Header from './Components/Header';
+import About from './Components/About';
 import Projects from './Components/Projects';
 import Experience from './Components/Experience';
 import Skills from './Components/Skills';
@@ -11,12 +12,14 @@ import Contact from './Components/Contact';
 function App() {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [topY, setTopY] = useState(0);
+  const [aboutY, setAboutY] = useState(0);
   const [projectY, setProjectY] = useState(0);
   const [experienceY, setExperienceY] = useState(0);
   const [skillsY, setSkillsY] = useState(0);
   const [contactY, setContactY] = useState(0);
 
   const topRef = useRef();
+  const aboutRef = useRef();
   const projectRef = useRef();
   const experienceRef = useRef();
   const skillsRef = useRef();
@@ -35,12 +38,16 @@ function App() {
         window.scrollTo(0, topY);
         break;
 
+      case 'about':
+        window.scrollTo(0, aboutY - 65);
+        break;
+
       case 'projects':
         window.scrollTo(0, projectY - 65);
         break;
 
       case 'experience':
-        window.scrollTo(0, experienceY - 64);
+        window.scrollTo(0, experienceY - 65);
         break;
 
       case 'skills':
@@ -58,12 +65,14 @@ function App() {
 
   const getPosition = () => {
     const topYCoordinate = topRef.current.offsetTop;
+    const aboutYCoordinate = aboutRef.current.offsetTop;
     const proYCoordinate = projectRef.current.offsetTop;
     const expYCoordinate = experienceRef.current.offsetTop;
     const sklYCoordinate = skillsRef.current.offsetTop;
     const conYCoordinate = contactRef.current.offsetTop;
 
     setTopY(topYCoordinate);
+    setAboutY(aboutYCoordinate);
     setProjectY(proYCoordinate);
     setExperienceY(expYCoordinate);
     setSkillsY(sklYCoordinate);
@@ -83,9 +92,10 @@ function App() {
       <Menu isMenuActive={isMenuActive} toggleNav={toggleNav} />
       <Navbar isMenuActive={isMenuActive} toggleNav={toggleNav} />
       <Header innerRef={topRef} />
+      <About innerRef={aboutRef} />
+      <Skills innerRef={skillsRef} />
       <Projects innerRef={projectRef} />
       <Experience innerRef={experienceRef} />
-      <Skills innerRef={skillsRef} />
       <Contact innerRef={contactRef} />
     </div>
   );

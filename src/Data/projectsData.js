@@ -29,7 +29,7 @@ import splitterHeaderThumbnail from '../Images/splitter-header.png';
 
 export const projectsData = [
   {
-    title: 'Sunnyside',
+    title: 'Sunnyside Landing Page',
     repository: 'https://github.com/rizky-pm/fm_sunnyside_landing-page',
     liveSite: 'https://rizky-pm.github.io/fm_sunnyside_landing-page/',
     thumbnail: sunnysideHeaderThumbnail,
@@ -37,7 +37,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Blogr',
+    title: 'Blogr Landing Page',
     repository: 'https://github.com/rizky-pm/fm_blogr-landing-page',
     liveSite: 'https://rizky-pm.github.io/fm_blogr-landing-page/',
     thumbnail: blogrHeaderThumbnail,
@@ -45,7 +45,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Loopstudios',
+    title: 'Loopstudios Landing Page',
     repository: 'https://github.com/rizky-pm/loopstudios_landing_page',
     liveSite: 'https://rizky-pm.github.io/loopstudios_landing_page/',
     thumbnail: loopstudiosHeaderThumbnail,
@@ -53,7 +53,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Splitter',
+    title: 'Splitter App',
     repository: 'https://github.com/rizky-pm/fm_splitter',
     liveSite: 'https://rizky-pm.github.io/fm_splitter/',
     thumbnail: splitterHeaderThumbnail,
@@ -69,7 +69,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Interactive Pricing Component',
+    title: 'Interactive Pricing',
     repository: 'https://github.com/rizky-pm/interactive-pricing-component',
     liveSite: 'https://rizky-pm.github.io/interactive-pricing-component/',
     thumbnail: interactivePricingComponentThumbnail,
@@ -77,7 +77,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Crowdfunding',
+    title: 'Crowdfunding Landing Page',
     repository: 'https://github.com/rizky-pm/crowdfunding-product-page',
     liveSite: 'https://rizky-pm.github.io/crowdfunding-product-page/',
     thumbnail: crowdfundingThumbnail,
@@ -101,7 +101,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Fylo',
+    title: 'Fylo Section',
     repository: 'https://github.com/rizky-pm/fylo-data-storage-component',
     liveSite: 'https://rizky-pm.github.io/fylo-data-storage-component/',
     thumbnail: fyloThumbnail,
@@ -109,7 +109,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Coding Bootcamp Testimonials',
+    title: 'Testimonials Section',
     repository:
       'https://github.com/rizky-pm/coding-bootcamp-testimonials-slider',
     liveSite: 'https://rizky-pm.github.io/coding-bootcamp-testimonials-slider/',
@@ -118,7 +118,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Ping Coming Soon Page',
+    title: 'Ping Coming Soon Section',
     repository: 'https://github.com/rizky-pm/fm_ping-coming-soon-page',
     liveSite: 'https://rizky-pm.github.io/fm_ping-coming-soon-page/',
     thumbnail: pingThumbnail,
@@ -134,7 +134,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Intro Component with Sign Up Form',
+    title: 'Sign Up Form Component',
     repository:
       'https://github.com/rizky-pm/fm_intro-component-with-sign-up-form',
     liveSite:
@@ -144,7 +144,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Base Apparel Coming Soon Page',
+    title: 'Apparel Coming Soon Section',
     repository: 'https://github.com/rizky-pm/fm_base-apparel-coming-soon-page',
     liveSite: 'https://rizky-pm.github.io/fm_base-apparel-coming-soon-page/',
     thumbnail: baseApparelThumbnail,
@@ -176,7 +176,7 @@ export const projectsData = [
   },
 
   {
-    title: '3-Column Preview Card Component',
+    title: '3-Column Preview Card',
     repository:
       'https://github.com/rizky-pm/fm_three-column-preview-card-component',
     liveSite:
@@ -186,7 +186,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Stats Preview Card Component',
+    title: 'Stats Preview Card',
     repository: 'https://github.com/rizky-pm/fm_stats-preview-card-component',
     liveSite: 'https://rizky-pm.github.io/fm_stats-preview-card-component/',
     thumbnail: statsPreviewCardThumbnail,
@@ -210,7 +210,7 @@ export const projectsData = [
   },
 
   {
-    title: 'Profile Card',
+    title: 'Profile Card Component',
     repository: 'https://github.com/rizky-pm/fm_profile-card-component',
     liveSite: 'https://rizky-pm.github.io/fm_profile-card-component/',
     thumbnail: profileCardThumbnail,

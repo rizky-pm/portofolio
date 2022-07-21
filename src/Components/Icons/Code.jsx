@@ -4,7 +4,7 @@ const Code = ({ width, height }) => {
   return (
     <div className=''>
       <svg
-        className={`${width} ${height} text-light hover:text-lightBlue hover:cursor-pointer transition`}
+        className={`${width} ${height} hover:cursor-pointer`}
         fill='none'
         viewBox='0 0 24 24'
         stroke='currentColor'

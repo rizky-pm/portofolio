@@ -7,8 +7,8 @@ import {
   animationVariants,
 } from '../../Utils/Animation';
 
-import HeroImage from '../../Images/Hero portofolio.png';
-import HeroImageMobile from '../../Images/hero-mobile.jpeg';
+import ImageLandscape from '../../Images/self-landscape-2.png';
+import ImagePortrait from '../../Images/self-portrait-3.png';
 
 const Header = ({ innerRef }) => {
   const isMedium = useIsMd();
@@ -53,27 +53,27 @@ const Header = ({ innerRef }) => {
         transition={heroImageMotion.transition}
       >
         <img
-          src={HeroImage}
+          src={ImageLandscape}
           alt='Hero'
-          className='w-screen h-screen hidden lg:block'
+          className='w-screen h-screen object-contain xl:object-fill hidden lg:block'
         />
         <img
-          src={HeroImageMobile}
+          src={ImagePortrait}
           alt='Hero'
           className='w-screen h-screen object-cover lg:hidden'
         />
       </motion.span>
-      <div className='absolute top-16 lg:top-1/2 lg:-translate-y-1/2 right-0 lg:right-20 text-light md:py-16'>
-        <div className='flex flex-col px-5 lg:px-0 space-y-1 md:space-y-2 text-right'>
+      <div className='absolute top-16 lg:top-1/2 lg:-translate-y-1/2 right-5 md:right-20 xl:right-40 text-light md:py-16'>
+        <div className='flex flex-col space-y-1 md:space-y-2 text-right'>
           <motion.span
             initial={greetingMotion.initial}
             animate={greetingMotion.animate}
             transition={greetingMotion.transition}
-            className='text-sm xs:text-base md:text-xl 2xl:text-2xl text-lightGray uppercase font-heading'
+            className='paragraph uppercase font-heading'
           >
             Hello there, I'm
           </motion.span>
-          <div className='font-heading font-extrabold text-4xl xs:text-5xl md:text-8xl 2xl:text-9xl uppercase'>
+          <div className='font-heading font-extrabold text-4xl xs:text-5xl md:text-6xl lg:text-7xl 2xl:text-9xl uppercase'>
             <motion.h1
               initial={fullNameMotion.initial}
               animate={fullNameMotion.animate}
@@ -87,7 +87,7 @@ const Header = ({ innerRef }) => {
             initial={positionMotion.initial}
             animate={positionMotion.animate}
             transition={positionMotion.transition}
-            className='font-body font-bold text-sm xs:text-base md:text-2xl 2xl:text-3xl uppercase'
+            className='font-body font-bold text-sm xs:text-base md:text-xl 2xl:text-3xl uppercase'
           >
             {'<'} 1 Year Experience{' '}
             <span className='text-lightBlue'>Frontend Developer</span>
@@ -97,7 +97,7 @@ const Header = ({ innerRef }) => {
             initial={summaryMotion.initial}
             animate={summaryMotion.animate}
             transition={summaryMotion.transition}
-            className='font-body text-sm xs:text-base md:text-xl 2xl:text-2xl text-lightGray w-full md:w-[400px] lg:w-[600px] self-end'
+            className='paragraph w-full xs:w-4/5 md:w-[500px] lg:w-[600px] self-end'
           >
             i'm a <span className='text-lightBlue font-bold'>frontend</span>{' '}
             developer with speciality{' '}
