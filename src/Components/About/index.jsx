@@ -36,7 +36,7 @@ const About = ({ innerRef }) => {
     <section
       id='about'
       ref={innerRef}
-      className='flex flex-col bg-dark text-light px-5 md:px-20 lg:px-44 2xl:px-96 py-8 md:py-16 space-y-8 justify-center'
+      className='section-container justify-center'
     >
       <div className='flex items-center'>
         {/* Title */}
@@ -48,7 +48,7 @@ const About = ({ innerRef }) => {
             scaleX: titleInView ? 1 : 0,
           }}
           transition={{ duration: 1 }}
-          className='main-heading origin-left'
+          className='secondary-heading origin-left'
         >
           About me
         </motion.h1>

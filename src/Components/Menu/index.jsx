@@ -170,7 +170,7 @@ const Menu = ({ isMenuActive, toggleNav }) => {
                   target='_blank'
                   rel='noopener noreferrer'
                   onClick={() => {
-                    toggleNav('contact');
+                    toggleNav('');
                   }}
                 >
                   Useful Documents

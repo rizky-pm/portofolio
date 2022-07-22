@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 @layer components {
     @keyframes slideAnim {
         from {
@@ -13,24 +17,6 @@ html {
         }
         to {
           transform: translateX(-100%);
-        }
-    }
-
-    @keyframes appearError {
-        from {
-          transform: scaleY(0);
-        }
-        to {
-          transform: scaleY(1);
-        }
-    }
-
-    @keyframes disappearError {
-        from {
-          transform: scaleY(1);
-        }
-        to {
-          transform: scaleY(0);
         }
     }
 
@@ -54,157 +40,99 @@ html {
         }
     }
 
-    @keyframes testAnimation {
-      0% {
-        width: 0;
-      }
-
-      100% {
-          @apply w-full
-      }
+    .section-container {
+      @apply flex flex-col bg-dark text-light px-5 md:px-20 xl:px-40 2xl:px-96 py-8 md:py-16 space-y-8
     }
 
-    .main-heading {
-      @apply xl:text-7xl md:text-6xl xs:text-5xl text-2xl font-bold uppercase
+    .primary-heading {
+      @apply font-heading font-extrabold text-4xl xs:text-5xl md:text-6xl lg:text-7xl 2xl:text-9xl uppercase
     }
 
     .secondary-heading {
-      @apply font-body font-bold text-sm xs:text-base md:text-2xl lg:text-xl 2xl:text-3xl uppercase
+      @apply xl:text-7xl md:text-6xl xs:text-5xl text-2xl font-bold uppercase
     }
 
     .paragraph {
-      /* @apply font-body text-sm xs:text-base md:text-xl lg:text-lg 2xl:text-2xl text-lightGray */
-
       @apply text-lightGray text-sm xs:text-base md:text-xl font-body
     }
 
-    .navbar {
-      box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+    .basic-transition {
+      @apply transition-all ease-linear duration-[0.25s];
+    }
+      
+    .looper {
+      width: 100%;
+      overflow: hidden;
     }
 
-    @supports (-webkit-backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)) or (backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)) {
-      .navbar-b.navbar-reduce {
-        transition: all 0.5s ease-in-out;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
-        -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
-
-        @apply bg-dark
-      }
+    .looper__innerList {
+      display: flex;
+      justify-content: center;
+      width: fit-content;
+    }
+    
+    .looper__innerList[data-animate="true"] .looper__listInstance {
+      animation: slideAnim linear infinite;   
+    }
+    
+    .looper__listInstance {
+      display: flex;
+      width: max-content;
+    
+      animation: none;
     }
 
-      .basic-transition {
-        @apply transition-all ease-linear duration-[0.25s];
-      }
-      
-      .looper {
-        width: 100%;
-        overflow: hidden;
-      }
+    .primary-button-light {
+      @apply py-2 px-6 lg:px-8 bg-light text-dark font-body font-medium lg:font-bold tracking-wider text-base lg:text-lg border-2 lg:border-4 border-light hover:bg-transparent hover:text-light basic-transition uppercase
+    }
 
-      .looper__innerList {
-        display: flex;
-        justify-content: center;
-        width: fit-content;
-      }
-      
-      .looper__innerList[data-animate="true"] .looper__listInstance {
-        animation: slideAnim linear infinite;   
-      }
-      
-      .looper__listInstance {
-        display: flex;
-        width: max-content;
-      
-        animation: none;
-      }
+    .link {
+      text-decoration: none;
+      position: relative;
+    }
 
-      .primary-button-dark {
-        @apply py-2 px-6 lg:px-8 bg-dark text-light font-body font-medium lg:font-bold tracking-wider text-base lg:text-lg border-2 lg:border-4 border-dark hover:bg-transparent hover:text-dark basic-transition uppercase
-      }
+    .link:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      animation: reverseHoverAnimation 0.25s ease;
 
-      .primary-button-light {
-        @apply py-2 px-6 lg:px-8 bg-light text-dark font-body font-medium lg:font-bold tracking-wider text-base lg:text-lg border-2 lg:border-4 border-light hover:bg-transparent hover:text-light basic-transition uppercase
-      }
+      @apply bg-lightBlue h-[10%]
+    }
 
-      .input-field {
-        @apply p-2 rounded-sm mb-1 outline-none bg-transparent border-b-2 focus:outline-none border-dark shadow-sm placeholder-lightGray focus:placeholder-dark
-      }
+    .link:hover:after  {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: hoverAnimation 0.25s ease;
 
+      @apply bg-lightBlue w-full h-[10%]
+    }
 
-      .appear-error-message {
-        animation: appearError linear 0.3s;
-        transform-origin: top;
-      }
+    .hamburger-line {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      height: 2px;
+      width: 30px;
 
-      .disappear-error-message {
-        animation: disappearError linear 0.3s;
-        transform-origin: bottom;
-      }
-
-      .link {
-        text-decoration: none;
-        position: relative;
-      }
-
-      .link:after {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        animation: reverseHoverAnimation 0.25s ease;
-
-        @apply bg-lightBlue h-1
-      }
-
-      .link:hover:after  {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        animation: hoverAnimation 0.25s ease;
-
-        @apply bg-lightBlue w-full h-1
-      }
-
-      .animate-on-render {
-        text-decoration: none;
-      }
-
-      .animate-on-render:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        animation: testAnimation 2s ease;
-        
-        @apply w-full bg-lightBlue h-full
-      }
-
-      .hamburger-line {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-        display: block;
-        height: 2px;
-        width: 30px;
-        /* --tw-bg-opacity: 1; */
-        /* background-color: rgb(15 23 42 / var(--tw-bg-opacity)); */
-        background-color: white;
-      }
-      
-      .hamburger-active > span:nth-child(1) {
-        @apply origin-top-left rotate-45
-      }
-      
-      .hamburger-active > span:nth-child(2) {
-        @apply scale-0
-      }
-      
-      .hamburger-active > span:nth-child(3) {
-        @apply origin-bottom-left -rotate-45
-      }
+      @apply bg-light
+    }
+    
+    .hamburger-active > span:nth-child(1) {
+      @apply origin-top-left rotate-45
+    }
+    
+    .hamburger-active > span:nth-child(2) {
+      @apply scale-0
+    }
+    
+    .hamburger-active > span:nth-child(3) {
+      @apply origin-bottom-left -rotate-45
+    }
 }

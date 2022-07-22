@@ -60,8 +60,7 @@ const Skills = ({ innerRef }) => {
     <section
       ref={innerRef}
       id='skills'
-      className='bg-dark text-light py-8 md:py-16 space-y-12 justify-center items-center text-right'
-      // className='bg-light flex flex-col justify-center lg:justify-start space-y-8 xs:space-y-16 py-8 md:py-16'
+      className='bg-dark text-light py-8 md:py-16 space-y-8 md:space-y-12 xl:space-y-16 justify-center items-center text-right'
     >
       <div className='flex flex-col px-5 md:px-20 xl:px-40 2xl:px-96 space-y-12'>
         <div className='flex items-center'>
@@ -83,7 +82,7 @@ const Skills = ({ innerRef }) => {
               scaleX: titleInView ? 1 : 0,
             }}
             transition={{ duration: 1 }}
-            className='main-heading origin-right'
+            className='secondary-heading origin-right'
           >
             Tech Stack
           </motion.h1>
@@ -171,32 +170,32 @@ const Skills = ({ innerRef }) => {
         <InfiniteLooper speed='20' direction='right'>
           <div className='flex space-x-10 md:space-x-20'>
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain ml-10 md:ml-20'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain ml-10 md:ml-20'
               src={reactIcon}
               alt='ReactJS icon'
             />
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain'
               src={reduxIcon}
               alt='Redux icon'
             />
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain'
               src={routerIcon}
               alt='React router icon'
             />
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain'
               src={tailwindCssIcon}
               alt='TailwindCSS icon'
             />
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain'
               src={styledComponentsIcon}
               alt='Styled-Components icon'
             />
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain'
               src={htmlIcon}
               alt='HTML5 icon'
             />
@@ -216,32 +215,32 @@ const Skills = ({ innerRef }) => {
         <InfiniteLooper speed='20' direction='reverse'>
           <div className='flex space-x-10 md:space-x-20'>
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain ml-10 md:ml-20'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain ml-10 md:ml-20'
               src={cssIcon}
               alt='CSS icon'
             />
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain'
               src={jsIcon}
               alt='Javascript icon'
             />
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain'
               src={nodejsIcon}
               alt='NodeJS icon'
             />
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain'
               src={expressIcon}
               alt='Express icon'
             />
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain'
               src={gitIcon}
               alt='Git icon'
             />
             <img
-              className='w-16 h-16 md:w-32 md:h-32 object-contain'
+              className='w-16 h-16 md:w-24 xl:w-32 md:h-24 xl:h-32 object-contain'
               src={postmanIcon}
               alt='Postman icon'
             />

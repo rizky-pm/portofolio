@@ -45,7 +45,7 @@ const Contact = ({ innerRef }) => {
     <footer
       ref={innerRef}
       id='contact'
-      className='relative flex flex-col bg-dark text-light px-5 md:px-20 xl:px-40 2xl:px-96 py-8 md:py-16 space-y-8 h-screen justify-center items-center'
+      className='relative section-container h-screen justify-center items-center'
     >
       <motion.h1
         ref={titleRef}
@@ -56,7 +56,7 @@ const Contact = ({ innerRef }) => {
           x: titleInView ? 0 : 0,
         }}
         transition={{ duration: 1 }}
-        className='font-heading font-extrabold text-4xl xs:text-5xl md:text-6xl lg:text-7xl 2xl:text-9xl uppercase'
+        className='primary-heading'
       >
         Get in touch
       </motion.h1>
@@ -176,7 +176,7 @@ const Contact = ({ innerRef }) => {
             x: builtWithInView ? 0 : 0,
           }}
           transition={{ duration: 1 }}
-          className='flex flex-col space-y-4 items-center self-center'
+          className='hidden md:flex flex-col space-y-4 items-center self-center'
         >
           <span className='uppercase font-heading text-lg'>Built with</span>
 

@@ -26,13 +26,13 @@ const Header = ({ innerRef }) => {
   };
 
   const greetingMotion = animationVariants(
-    fadeUpAnimation(3),
+    fadeUpAnimation(4),
     fadeUpAnimation(0),
     isMedium
   );
 
   const fullNameMotion = animationVariants(
-    fadeUpAnimation(3.5),
+    fadeUpAnimation(4.5),
     fadeUpAnimation(1),
     isMedium
   );
@@ -40,19 +40,19 @@ const Header = ({ innerRef }) => {
   console.log({ fullNameMotion });
 
   const positionMotion = animationVariants(
-    fadeUpAnimation(4),
+    fadeUpAnimation(5),
     fadeUpAnimation(1.5),
     isMedium
   );
 
   const summaryMotion = animationVariants(
-    fadeUpAnimation(4.5),
+    fadeUpAnimation(5.5),
     fadeUpAnimation(2),
     isMedium
   );
 
   const heroImageMotion = animationVariants(
-    fadeUpAnimation(5),
+    fadeUpAnimation(5.5),
     fadeUpAnimation(2.5),
     isMedium
   );
@@ -85,11 +85,12 @@ const Header = ({ innerRef }) => {
           >
             Hello there, I'm
           </motion.span>
-          <div className='font-heading font-extrabold text-4xl xs:text-5xl md:text-6xl lg:text-7xl 2xl:text-9xl uppercase'>
+          <div>
             <motion.h1
               initial={fullNameMotion.initial}
               animate={fullNameMotion.animate}
               transition={fullNameMotion.transition}
+              className='primary-heading'
             >
               <span className='text-lightBlue'>Rizky</span> <br /> Putra <br />
               Mahendra

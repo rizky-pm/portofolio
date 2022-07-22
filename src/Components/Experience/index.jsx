@@ -19,7 +19,7 @@ const Experience = ({ innerRef }) => {
   return (
     <section
       ref={innerRef}
-      className='flex flex-col bg-dark text-light px-5 md:px-20 xl:px-40 2xl:px-96 py-8 md:py-16 space-y-8 h-auto xl:h-screen justify-center text-right'
+      className='section-container h-auto xl:h-screen justify-center text-right'
     >
       <div className='flex items-center'>
         {/* Line */}
@@ -40,7 +40,7 @@ const Experience = ({ innerRef }) => {
             scaleX: titleInView ? 1 : 0,
           }}
           transition={{ duration: 1 }}
-          className='main-heading origin-right'
+          className='secondary-heading origin-right'
         >
           experience
         </motion.h1>

@@ -57,10 +57,7 @@ const Projects = ({ innerRef }) => {
   }, []);
 
   return (
-    <section
-      ref={innerRef}
-      className='flex flex-col bg-dark text-light px-5 md:px-20 xl:px-40 2xl:px-96 py-8 md:py-16 space-y-8'
-    >
+    <section ref={innerRef} className='section-container'>
       <div className='flex items-center'>
         {/* Title */}
         <motion.h1
@@ -71,7 +68,7 @@ const Projects = ({ innerRef }) => {
             scaleX: titleInView ? 1 : 0,
           }}
           transition={{ duration: 1 }}
-          className='main-heading origin-left'
+          className='secondary-heading origin-left'
         >
           I made these
         </motion.h1>
